@@ -1,0 +1,29 @@
+###################################################################################
+!/bin/bash
+###################################################################################
+##################### Author : Kusuma Sri #########################################
+###################################################################################
+
+---
+# Basic provisioning example
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+    region: "us-west-2"
+    instance_type: t2.micro
+    image_id: "ami-e1906781"
+
+  tasks:
+    - name: Start the instances
+      ec2:
+        region: "{{ region }}"
+        image: "{{ image_id }}"
+        instance_type: "{{ instance_type }}"
+        key_name: newKey
+        wait: yes
+      register: basic_ec2
+
+
