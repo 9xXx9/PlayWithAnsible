@@ -1,8 +1,6 @@
-###############################################################################
-
+##############################################################################
 #!/bin/bash
-########Author: Manmohan Gehlot and Archana Joshi September 13,2016 ###########
-
+######## Author: Manmohan Gehlot and Archana Joshi September 13,2016 #########
 ##############################################################################
 
 echo "Make sure you have get following configuration :
@@ -16,8 +14,6 @@ if [ "$ans" != "y" ]; then
    echo "Sorry! wrong input. please try againg"
    exit 1;
 fi
-
-
 
 read -p "Enter the path to ansible installation dir :" pathtofile
 export base_dir=$pathtofile
